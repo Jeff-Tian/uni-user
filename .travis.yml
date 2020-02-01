@@ -16,6 +16,7 @@ jobs:
         github_token: $GH_TOKEN # Set in the settings page of your repository, as a secure variable
         keep_history: true
         local_dir: storybook-static
+        fqdn: uni-user-story.pa-ca.me
         on:
           branch: master
 
