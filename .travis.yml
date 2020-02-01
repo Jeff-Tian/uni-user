@@ -12,8 +12,7 @@ jobs:
         provider: script
         skip_cleanup: true
         script:
-          - 'npm run build-storybook'
-          - 'npm run deploy-storybook'
+          - 'npm run build-storybook && npm run deploy-storybook'
 
     # Define the release stage that runs semantic-release
     - stage: release
