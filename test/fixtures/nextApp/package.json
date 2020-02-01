@@ -1,0 +1,22 @@
+{
+  "name": "nextApp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [],
+  "author": "Jeff Tian",
+  "license": "ISC",
+  "dependencies": {
+    "@uni/uni-user-api": "^4.16.1",
+    "@zeit/next-css": "^1.0.1",
+    "antd": "^3.26.4",
+    "next": "^9.1.6",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}

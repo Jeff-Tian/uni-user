@@ -1,0 +1,8 @@
+{
+    "branch": "master",
+    "plugins": [
+        ["@semantic-release/npm", {
+          "npmPublish": true
+        }]
+    ]
+}
