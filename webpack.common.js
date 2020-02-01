@@ -8,7 +8,7 @@ const configArgv = JSON.parse(process.env.npm_config_argv);
 module.exports = function() {
   let config = {
     entry: {
-      index: './src/main.js'
+      index: './src/index.js'
     },
     output: {
       path: path.resolve(__dirname, 'dist'),

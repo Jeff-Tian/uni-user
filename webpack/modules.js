@@ -1,5 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
+const tsImportPluginFactory = require('ts-import-plugin')
 
 module.exports = {
   rules: [
@@ -13,20 +14,37 @@ module.exports = {
     },
     {
       test: /\.([tj]sx?)$/,
-      use: {
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/env', '@babel/react'],
-          plugins: [
-            '@babel/plugin-transform-runtime',
-            [
-              '@babel/plugin-proposal-class-properties',
-              {
-                loose: true
-              }
-            ],
-            ['@babel/plugin-proposal-export-default-from']
-          ]
+      // use: {
+      //   loader: 'babel-loader',
+      //   options: {
+      //     presets: ['@babel/env', '@babel/react'],
+      //     plugins: [
+      //       '@babel/plugin-transform-runtime',
+      //       [
+      //         '@babel/plugin-proposal-class-properties',
+      //         {
+      //           loose: true
+      //         }
+      //       ],
+      //       ['@babel/plugin-proposal-export-default-from']
+      //     ]
+      //   }
+      // },
+
+      loader: 'ts-loader',
+      options: {
+        transpileOnly: true,
+        getCustomTransformers: () => ({
+          before: [tsImportPluginFactory([
+            {
+              libraryName: 'antd',
+              libraryDirectory: 'lib',
+              style: 'css'
+            }
+          ])]
+        }),
+        compilerOptions: {
+          module: 'es2015'
         }
       },
       exclude: /node_modules/

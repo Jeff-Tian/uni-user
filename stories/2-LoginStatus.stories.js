@@ -13,7 +13,7 @@ export const CheckLoginStatus = () => {
     UniUser.getInfo().then(res => setHasLoggedIn(res !== null))
   });
 
-  return <p>用户状态：{hasLoggedIn}</p>
+  return <p>用户已登录？{hasLoggedIn.toString()}</p>
 }
 
 CheckLoginStatus.story = {
