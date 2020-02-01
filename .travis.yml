@@ -4,6 +4,8 @@ node_js:
   - 8
   - 10
 
+script: 'npm run build-storybook'
+
 jobs:
   include:
     - stage: storybook
@@ -11,7 +13,6 @@ jobs:
       deploy:
         provider: pages
         skip_cleanup: true
-        script: 'npm run build-storybook'
         github_token: $GH_TOKEN # Set in the settings page of your repository, as a secure variable
         keep_history: true
         local_dir: storybook-static
