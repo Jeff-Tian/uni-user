@@ -9,10 +9,14 @@ jobs:
     - stage: storybook
       node_js: lts/*
       deploy:
-        provider: script
+        provider: pages
         skip_cleanup: true
-        script:
-          - 'npm run build-storybook && npm run deploy-storybook'
+        script: 'npm run build-storybook'
+        github_token: $GH_TOKEN # Set in the settings page of your repository, as a secure variable
+        keep_history: true
+        local_dir: storybook-static
+        on:
+          branch: master
 
     # Define the release stage that runs semantic-release
     - stage: release
