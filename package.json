@@ -1,7 +1,7 @@
 {
   "name": "uni-user",
   "version": "0.0.0-development",
-  "description": "",
+  "description": "uni-sso component for front-end projects.",
   "main": "lib/index.js",
   "scripts": {
     "local": "cross-env NODE_ENV=development webpack --config webpack.config.js",
