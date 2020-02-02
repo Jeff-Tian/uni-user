@@ -40,6 +40,10 @@ object-assign
  * Released under the MIT License.
  */
 
+/*!@license Copyright 2013, Heinrich Goebl, License: MIT, see https://github.com/hgoebl/mobile-detect.js*/
+
+/*!mobile-detect v1.4.4 2019-09-21*/
+
 /** @license React v0.13.6
  * scheduler.production.min.js
  *
