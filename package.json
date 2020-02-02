@@ -91,13 +91,22 @@
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
     "@jeff-tian/sleep": "^1.0.0",
+    "@tarojs/redux": "^2.0.2",
+    "@tarojs/taro": "^2.0.2",
+    "@tarojs/taro-h5": "^2.0.2",
     "alife-logger": "^1.8.1",
     "antd": "3.15.2",
     "antd-mobile": "2.2.11",
     "crypto-js": "3.1.9-1",
     "google-libphonenumber": "3.2.2",
+    "nerv-devtools": "^1.5.6",
+    "nervjs": "^1.5.6",
     "phone": "2.3.10",
-    "ramda": "^0.26.1"
+    "querystring": "^0.2.0",
+    "ramda": "^0.26.1",
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
   },
   "peerDependencies": {
     "react": "16.8.6",

@@ -23,6 +23,10 @@ export class UniUser {
     return fetching;
   }
 
+  static loginByToken(dispatch) {
+    return async ({ t }) => console.log('token = ', t)
+  }
+
   static async logout() {
     UniUser.clearCache();
   }

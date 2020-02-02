@@ -16,7 +16,8 @@
     "moduleResolution": "node",
     "typeRoots": [
       "node_modules/@types"
-    ]
+    ],
+    "experimentalDecorators": true
   },
   "files": [
     "src/api/api.ts"

@@ -9,10 +9,10 @@ export default {
 export const LoginAction = () => {
 
   return <div>
-    <LoginButton />
+    <LoginButton returnUrl={`${location.origin}?path=/story/登录回调--login-callback`} target="_blank" />
   </div>
 }
 
 LoginAction.story = {
-  name: '登录动作'
+  name: '登录动作',
 };
