@@ -4,7 +4,8 @@ import {
     SET_USER,
     LOGGEDIN,
     LOGGIN_CANCELLED,
-    SET_LOADING
+    SET_LOADING,
+    SET_CHECKING
 } from "../constants/login";
 
 export const login = () => {
@@ -45,3 +46,8 @@ export const setLoading = (loading: boolean) => {
         loading
     }
 }
+
+export const setChecking = (checking: boolean) => ({
+    type: SET_CHECKING,
+    checking
+})
