@@ -1,6 +1,6 @@
 import proxyFetch from '../helpers/proxyFetch';
 import * as R from 'ramda';
-import { getAccessToken } from '../helpers/getAccessToken';
+import { getAccessToken } from '../helpers/storage';
 import { getProfile } from './api';
 
 const fetchInstance = proxyFetch.getInstance();

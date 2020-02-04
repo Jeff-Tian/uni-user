@@ -9,7 +9,7 @@ export default {
 export const LoginAction = () => {
 
   return <div>
-    <LoginButton returnUrl={`${location.origin}?path=/story/登录回调--login-callback`} target="_blank" />
+    <LoginButton returnUrl={`${location.origin}/iframe.html?id=登录回调--login-callback-story&viewMode=story`} target="_blank" />
   </div>
 }
 

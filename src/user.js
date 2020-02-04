@@ -1,4 +1,5 @@
 import { getUserInfo } from './api/login-api';
+import { setAccessToken } from './helpers/storage';
 
 let fetching = false;
 
@@ -6,11 +7,8 @@ const getUserInfoFromNetwork = async () => {
   console.log('get user from network...');
   const res = await getUserInfo();
 
-  if (res.success) {
-    return res.data;
-  }
-
-  return null;
+  console.log('res = ', res);
+  return res
 };
 
 export class UniUser {
@@ -24,7 +22,9 @@ export class UniUser {
   }
 
   static loginByToken(dispatch) {
-    return async ({ t }) => console.log('token = ', t)
+    return async ({ token }) => {
+      setAccessToken(token);
+    }
   }
 
   static async logout() {

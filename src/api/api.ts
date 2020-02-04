@@ -1,5 +1,5 @@
 import proxyFetch from '../helpers/proxyFetch';
-import { getAccessToken } from '../helpers/getAccessToken';
+import { getAccessToken } from '../helpers/storage';
 
 const fetchInstance = proxyFetch.getInstance();
 

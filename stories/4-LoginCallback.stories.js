@@ -16,5 +16,5 @@ export const LoginCallbackStory = () => {
 }
 
 LoginCallbackStory.story = {
-  name: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOjEsImlhdCI6MTU4MDQ1MDQ4NSwiZXhwIjoxNTgwNDUwNTQ1fQ.tW03Z688BjUy9v4s78InM3agHRHJVnn7YH7yDvIYIyQ',
+  name: '登录回调',
 };

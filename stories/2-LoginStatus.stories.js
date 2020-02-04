@@ -10,7 +10,15 @@ export const CheckLoginStatus = () => {
   const [hasLoggedIn, setHasLoggedIn] = useState(false);
 
   useEffect(() => {
-    UniUser.getInfo().then(res => setHasLoggedIn(res !== null))
+    UniUser.getInfo()
+      .then(res => {
+        if (res.statusCode === 401) {
+          throw res;
+        }
+
+        setHasLoggedIn(res !== null)
+      })
+      .catch(console.error)
   });
 
   return <p>用户已登录？{hasLoggedIn.toString()}</p>
