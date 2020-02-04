@@ -64,7 +64,6 @@ export default (win, ssoUrl) => {
             }
 
             if (popup.closed) {
-                console.log("login cancelled!");
                 dispatch(loginCancelled());
                 clearInterval(interval);
             }
@@ -125,9 +124,6 @@ export default (win, ssoUrl) => {
                             console.error(ex);
                         }
                     }
-
-                    console.log('popup = ', popup, popup.location);
-                    console.log('eventSource = ', event.source, event.source.location);
 
                     clearInterval(interval);
 

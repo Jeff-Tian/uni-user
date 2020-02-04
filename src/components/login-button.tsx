@@ -6,7 +6,7 @@ import { setLoading } from '../redux/actions/login'
 
 const w = window.parent ?? window;
 
-const RawLoginButton = ({ target, returnUrl, startLogin, loading }) => {
+const RawLoginButton = ({ target, returnUrl, startLogin, loading, dispatch }) => {
     const ssoUrl = `https://sso.pa-ca.me/app/login?r=${encodeURIComponent(returnUrl ?? w.location.href)}`
 
     const gotoLoginPage = (evt) => {
@@ -14,7 +14,7 @@ const RawLoginButton = ({ target, returnUrl, startLogin, loading }) => {
 
         if (target === '_blank') {
             evt.preventDefault();
-            loginViaPopup(w, ssoUrl)(console.log);
+            loginViaPopup(w, ssoUrl)(dispatch);
         }
     }
 
@@ -27,6 +27,7 @@ export const LoginButton = connect((state, ownProps) => {
     }
 }, (dispatch, ownProps) => {
     return {
+        dispatch,
         startLogin: () => dispatch(setLoading(true))
     }
 })(RawLoginButton)
