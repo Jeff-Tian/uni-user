@@ -1,23 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from 'antd';
 import loginViaPopup from './login-popup';
 
 const w = window.parent ?? window;
 
-
 export const LoginButton = (props) => {
-    const gotoLoginPage = () => {
-        const returnUrl = props.returnUrl ?? w.location.href;
+    const { target } = props;
 
-        const ssoUrl = `https://sso.pa-ca.me/app/login?r=${encodeURIComponent(returnUrl)}`
+    const returnUrl = props.returnUrl ?? w.location.href;
 
-        if (props.target === '_blank') {
-            // w.open(ssoUrl);
+    const ssoUrl = `https://sso.pa-ca.me/app/login?r=${encodeURIComponent(returnUrl)}`
+
+    const [loading, setLoading] = useState(false);
+
+    const gotoLoginPage = (evt) => {
+        setLoading(true);
+
+        if (target === '_blank') {
+            evt.preventDefault();
             loginViaPopup(w, ssoUrl)(console.log);
-        } else {
-            w.location.href = ssoUrl;
         }
     }
 
-    return <Button onClick={gotoLoginPage}>登录</Button>
+    return <Button href={ssoUrl} onClick={gotoLoginPage} type="primary" htmlType="button" loading={loading}>登录</Button>
 }

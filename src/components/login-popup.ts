@@ -96,7 +96,9 @@ export default (win, ssoUrl) => {
                 }
 
                 if (typeof event.data === "string" && event.data.indexOf("?") === 0) {
-                    var tokenResult = querystring.parse(event.data.substr(1));
+                    let tokenResult = querystring.parse(event.data.substr(1));
+
+                    tokenResult = { ...tokenResult, token: tokenResult.token ?? tokenResult.t };
                     console.log(tokenResult);
 
                     if (tokenResult.token) {
@@ -124,6 +126,12 @@ export default (win, ssoUrl) => {
                         }
                     }
 
+                    console.log('popup = ', popup, popup.location);
+                    console.log('eventSource = ', event.source, event.source.location);
+
+                    clearInterval(interval);
+
+                    console.log('登录完成，结果是: ', tokenResult);
                     return (popup || event.source).close();
                 }
             },

@@ -1,27 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { UniUser } from '../src/index.js';
+import { LoginStatus } from '../src/components/login-view';
 
 export default {
   title: '登录状态',
-  component: () => <p>Hello</p>
+  component: LoginStatus
 };
 
 export const CheckLoginStatus = () => {
-  const [hasLoggedIn, setHasLoggedIn] = useState(false);
-
-  useEffect(() => {
-    UniUser.getInfo()
-      .then(res => {
-        if (res.statusCode === 401) {
-          throw res;
-        }
-
-        setHasLoggedIn(res !== null)
-      })
-      .catch(console.error)
-  });
-
-  return <p>用户已登录？{hasLoggedIn.toString()}</p>
+  return <LoginStatus />
 }
 
 CheckLoginStatus.story = {

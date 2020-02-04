@@ -21,10 +21,6 @@ interface Callback {
 }
 
 class Callback extends React.Component {
-    componentWillReceiveProps(nextProps) {
-        console.log(this.props, nextProps);
-    }
-
     componentWillUnmount() { }
 
     componentDidMount() {
