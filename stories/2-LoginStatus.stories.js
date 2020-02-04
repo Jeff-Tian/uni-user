@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { UniUser } from '../src/index.js';
-import { LoginStatus } from '../src/components/login-view';
+import UniUserContainer from '../src/containers/uni-user';
+import { LoginStatus } from '../src/components/login-status';
 
 export default {
   title: '登录状态',
@@ -8,7 +9,7 @@ export default {
 };
 
 export const CheckLoginStatus = () => {
-  return <LoginStatus />
+  return <UniUserContainer><LoginStatus /></UniUserContainer>
 }
 
 CheckLoginStatus.story = {

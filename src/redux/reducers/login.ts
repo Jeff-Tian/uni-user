@@ -3,7 +3,8 @@ import {
     LOGOUT,
     SET_USER,
     LOGGEDIN,
-    LOGGIN_CANCELLED
+    LOGGIN_CANCELLED,
+    SET_LOADING
 } from "../constants/login";
 
 const INITIAL_STATE = {
@@ -23,6 +24,8 @@ export default function login(state = INITIAL_STATE, action) {
             return { ...state, loading: false };
         case LOGGIN_CANCELLED:
             return { ...state, loading: false };
+        case SET_LOADING:
+            return { ...state, loading: action.loading }
         default:
             return state;
     }

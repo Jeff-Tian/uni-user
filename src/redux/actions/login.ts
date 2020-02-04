@@ -3,7 +3,8 @@ import {
     LOGOUT,
     SET_USER,
     LOGGEDIN,
-    LOGGIN_CANCELLED
+    LOGGIN_CANCELLED,
+    SET_LOADING
 } from "../constants/login";
 
 export const login = () => {
@@ -37,3 +38,10 @@ export const loginCancelled = () => {
         type: LOGGIN_CANCELLED
     };
 };
+
+export const setLoading = (loading: boolean) => {
+    return {
+        type: SET_LOADING,
+        loading
+    }
+}

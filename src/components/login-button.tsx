@@ -1,20 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from 'antd';
 import loginViaPopup from './login-popup';
+import { connect } from 'react-redux';
+import { setLoading } from '../redux/actions/login'
 
 const w = window.parent ?? window;
 
-export const LoginButton = (props) => {
-    const { target } = props;
-
-    const returnUrl = props.returnUrl ?? w.location.href;
-
-    const ssoUrl = `https://sso.pa-ca.me/app/login?r=${encodeURIComponent(returnUrl)}`
-
-    const [loading, setLoading] = useState(false);
+const RawLoginButton = ({ target, returnUrl, startLogin, loading }) => {
+    const ssoUrl = `https://sso.pa-ca.me/app/login?r=${encodeURIComponent(returnUrl ?? w.location.href)}`
 
     const gotoLoginPage = (evt) => {
-        setLoading(true);
+        startLogin()
 
         if (target === '_blank') {
             evt.preventDefault();
@@ -24,3 +20,13 @@ export const LoginButton = (props) => {
 
     return <Button href={ssoUrl} onClick={gotoLoginPage} type="primary" htmlType="button" loading={loading}>登录</Button>
 }
+
+export const LoginButton = connect((state, ownProps) => {
+    return {
+        loading: state.login.loading
+    }
+}, (dispatch, ownProps) => {
+    return {
+        startLogin: () => dispatch(setLoading(true))
+    }
+})(RawLoginButton)
