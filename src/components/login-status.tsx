@@ -18,7 +18,7 @@ export const LoginStatus = connect((state, ownProps) => ({
 
         UniUser.getInfo()
             .then((res: any) => {
-                if (res.statusCode === 401) {
+                if (res.statusCode !== 200) {
                     throw res;
                 }
 
@@ -28,5 +28,5 @@ export const LoginStatus = connect((state, ownProps) => ({
             .finally(endCheckingLoginStatus)
     }, []);
 
-    return !checking ? (hasLoggedIn ? <>已登录</> : <LoginButton target="_blank" returnUrl={`${location.origin}/iframe.html?id=登录回调--login-callback-story&viewMode=story`} />) : <>checking...</>
+    return !checking ? (hasLoggedIn ? <>已登录</> : <LoginButton target="_blank" returnUrl={`${location.origin}/iframe.html?id=登录回调--login-callback-story&viewMode=story`} />) : <>查询登陆状态中...</>
 })

@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { UniUser } from '../src/index.js';
+import React from 'react';
 import UniUserContainer from '../src/containers/uni-user';
 import { LoginStatus } from '../src/components/login-status';
 

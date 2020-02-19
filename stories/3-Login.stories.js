@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { LoginButton } from '../src/components/login-button'
+import UniUserContainer from '../src/containers/uni-user';
 
 export default {
   title: '登录动作',
@@ -8,9 +9,9 @@ export default {
 
 export const LoginAction = () => {
 
-  return <div>
+  return <UniUserContainer>
     <LoginButton returnUrl={`${location.origin}/iframe.html?id=登录回调--login-callback-story&viewMode=story`} target="_blank" />
-  </div>
+  </UniUserContainer>
 }
 
 LoginAction.story = {

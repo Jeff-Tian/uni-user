@@ -105,7 +105,7 @@ export default (win, ssoUrl) => {
 
                         try {
                             const userInfo = await Taro.request({
-                                url: "https://uniheart.pa-ca.me/jwt/user",
+                                url: "https://sso.jiwai.win/profile",
                                 header: {
                                     Authorization: "Bearer " + tokenResult.token
                                 },
