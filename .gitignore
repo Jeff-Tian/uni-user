@@ -6,3 +6,4 @@ package-lock.json
 lib
 .next
 storybook-static
+stats.json

@@ -14,7 +14,8 @@
     "storybook": "cross-env CSS_LOADER_EXCLUDE_NODE_MODULES=true start-storybook -p 6006",
     "build-storybook": "cross-env CSS_LOADER_EXCLUDE_NODE_MODULES=true build-storybook",
     "deploy-storybook": "gh-pages -d storybook-static",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "profile": "webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json"
   },
   "author": "",
   "license": "ISC",

@@ -6,6 +6,7 @@ const { CheckerPlugin } = require('awesome-typescript-loader');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const PacktrackerPlugin = require('@packtracker/webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 let mode = process.env.NODE_ENV || 'production';
 module.exports = {
@@ -39,8 +40,9 @@ module.exports = {
     new CheckerPlugin(),
     new PacktrackerPlugin({
       project_token: '219c8574-0259-4a20-8826-8ffbcf5398c3',
-      upload: process.env.CI === 'true'
-    })
+      upload: process.env.ci === 'true'
+    }),
+    new BundleAnalyzerPlugin()
   ],
   resolve: require('./webpack/resolve.js'),
   externals: [
