@@ -22,7 +22,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'lib'),
     filename: '[name].js',
-    library: 'uniUserApi',
+    library: 'uniUser',
     libraryTarget: 'umd',
     umdNamedDefine: true,
     publicPath: path.resolve(__dirname, 'lib'),
@@ -40,7 +40,8 @@ module.exports = {
     new CheckerPlugin(),
     new PacktrackerPlugin({
       project_token: '219c8574-0259-4a20-8826-8ffbcf5398c3',
-      upload: process.env.ci === 'true'
+      upload: process.env.ci === 'true',
+      branch: 'master'
     }),
     new BundleAnalyzerPlugin()
   ],
