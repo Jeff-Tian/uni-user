@@ -7,6 +7,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const PacktrackerPlugin = require('@packtracker/webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const Visualizer = require('webpack-visualizer-plugin');
 
 let mode = process.env.NODE_ENV || 'production';
 module.exports = {
@@ -42,7 +43,8 @@ module.exports = {
       project_token: '219c8574-0259-4a20-8826-8ffbcf5398c3',
       upload: process.env.ci === 'true',
       branch: 'master'
-    })
+    }),
+    new Visualizer(),
   ].concat(
     process.env.ci ? [] : [new BundleAnalyzerPlugin()]
   ),
