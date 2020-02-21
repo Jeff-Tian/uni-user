@@ -47,6 +47,7 @@ module.exports = {
       branch: 'master'
     }),
     new Visualizer(),
+    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh-cn/)
   ].concat(
     process.env.ci ? [] : [new BundleAnalyzerPlugin()]
   ),
