@@ -89,7 +89,8 @@
     "webpack-dev-server": "^3.9.0",
     "webpack-hot-middleware": "^2.25.0",
     "webpack-merge": "4.1.4",
-    "webpack-visualizer-plugin": "^0.1.11"
+    "webpack-visualizer-plugin": "^0.1.11",
+    "@tarojs/taro-h5": "^2.0.2"
   },
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
