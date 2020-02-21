@@ -22,7 +22,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'lib'),
     filename: '[name].js',
-    library: 'uniUser',
+    library: 'UniUser',
     libraryTarget: 'umd',
     umdNamedDefine: true,
     publicPath: path.resolve(__dirname, 'lib'),
@@ -59,8 +59,8 @@ module.exports = {
       'react-dom': {
         commonjs: 'react-dom',
         commonjs2: 'react-dom',
-        amd: 'ReactDOM',
-        root: 'ReactDOM'
+        amd: 'react-dom',
+        root: 'react-dom'
       },
       antd: {
         commonjs: 'antd',
