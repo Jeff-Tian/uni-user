@@ -1,5 +1,5 @@
 import React from 'react';
-import { Provider } from "react-redux";
+import { Provider } from "@tarojs/redux";
 import configStore from '../redux/store';
 
 console.log('configuring store...')
