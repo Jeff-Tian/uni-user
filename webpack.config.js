@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -84,6 +85,36 @@ module.exports = {
         commonjs2: '@tarojs/taro',
         amd: '@tarojs/taro',
         root: '@tarojs/taro'
+      },
+      "@tarojs/taro-weapp": {
+        commonjs: '@tarojs/taro-weapp',
+        commonjs2: '@tarojs/taro-weapp',
+        amd: '@tarojs/taro-weapp',
+        root: '@tarojs/taro-weapp'
+      },
+      "@tarojs/components": {
+        commonjs: '@tarojs/components',
+        commonjs2: '@tarojs/components',
+        amd: '@tarojs/components',
+        root: '@tarojs/components',
+      },
+      "@tarojs/redux": {
+        commonjs: '@tarojs/redux',
+        commonjs2: '@tarojs/redux',
+        amd: '@tarojs/redux',
+        root: '@tarojs/redux',
+      },
+      "@tarojs/taro": {
+        commonjs: '@tarojs/taro',
+        commonjs2: '@tarojs/taro',
+        amd: '@tarojs/taro',
+        root: '@tarojs/taro',
+      },
+      "@tarojs/taro-h5": {
+        commonjs: '@tarojs/taro-h5',
+        commonjs2: '@tarojs/taro-h5',
+        amd: '@tarojs/taro-h5',
+        root: '@tarojs/taro-h5',
       }
     }
   ]
