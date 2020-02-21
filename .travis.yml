@@ -6,8 +6,6 @@ node_js:
   - 12
   - 13
 
-script: 'npm run build-storybook'
-
 env:
   ci: true
 
@@ -15,6 +13,7 @@ jobs:
   include:
     - stage: storybook
       node_js: lts/*
+      script: 'npm run build-storybook'
       deploy:
         provider: pages
         skip_cleanup: true

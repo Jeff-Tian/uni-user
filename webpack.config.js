@@ -42,9 +42,10 @@ module.exports = {
       project_token: '219c8574-0259-4a20-8826-8ffbcf5398c3',
       upload: process.env.ci === 'true',
       branch: 'master'
-    }),
-    new BundleAnalyzerPlugin()
-  ],
+    })
+  ].concat(
+    process.env.ci ? [] : [new BundleAnalyzerPlugin()]
+  ),
   resolve: require('./webpack/resolve.js'),
   externals: [
     {
