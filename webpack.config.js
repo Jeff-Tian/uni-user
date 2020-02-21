@@ -72,12 +72,6 @@ module.exports = {
         amd: 'antd-mobile',
         root: 'antd-mobile'
       },
-      lodash: {
-        commonjs: 'lodash',
-        commonjs2: 'lodash',
-        amd: 'lodash',
-        root: '_'
-      },
       '@tarojs/taro': {
         commonjs: '@tarojs/taro',
         commonjs2: '@tarojs/taro',
