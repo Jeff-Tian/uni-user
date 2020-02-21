@@ -17,7 +17,9 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   optimization: {
-    minimizer: mode === 'production' ? [new OptimizeCSSAssetsPlugin({}), new TerserPlugin()] : [],
+    minimizer: mode === 'production' ? [new OptimizeCSSAssetsPlugin({}), new TerserPlugin({
+      extractComments: true
+    })] : [],
     minimize: mode === 'production'
   },
   output: {
