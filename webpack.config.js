@@ -5,6 +5,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const { CheckerPlugin } = require('awesome-typescript-loader');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const PacktrackerPlugin = require('@packtracker/webpack-plugin')
 
 let mode = process.env.NODE_ENV || 'production';
 module.exports = {
@@ -36,6 +37,10 @@ module.exports = {
       chunkFilename: '[id].css'
     }),
     new CheckerPlugin(),
+    new PacktrackerPlugin({
+      project_token: '219c8574-0259-4a20-8826-8ffbcf5398c3',
+      upload: process.env.CI === 'true'
+    })
   ],
   resolve: require('./webpack/resolve.js'),
   externals: [

@@ -6,6 +6,9 @@ node_js:
 
 script: 'npm run build-storybook'
 
+env:
+  ci: true
+
 jobs:
   include:
     - stage: storybook

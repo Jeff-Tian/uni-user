@@ -36,6 +36,7 @@
     "@babel/preset-typescript": "^7.7.4",
     "@babel/register": "^7.6.2",
     "@babel/runtime": "7.4.2",
+    "@packtracker/webpack-plugin": "^2.2.0",
     "@semantic-release/npm": "^5.3.1",
     "@storybook/addon-actions": "^5.3.4",
     "@storybook/addon-links": "^5.3.4",

@@ -6,6 +6,12 @@
 [![Build Status](https://travis-ci.com/Jeff-Tian/uni-user.svg?branch=master)](https://travis-ci.com/Jeff-Tian/uni-user)
 [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://uni-user-story.pa-ca.me/)
 
+## 安装
+
+```powershell
+npm i uni-user --save
+```
+
 ## 用途
 
 各个项目不用再写登录相关的逻辑，只需要引用此包即可。
