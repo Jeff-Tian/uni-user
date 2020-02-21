@@ -1,3 +1,5 @@
+import React from 'react';
+
 import Taro, { Component } from "@tarojs/taro";
 import { View, Button } from "@tarojs/components";
 
@@ -7,8 +9,9 @@ type TaroTestState = {
 };
 
 export default class TaroTest extends Component<any, TaroTestState> {
-    constructor() {
-        super(...arguments);
+    constructor(props) {
+        super(props);
+
         this.state = {
             title: "首页",
             list: [1, 2, 3]
