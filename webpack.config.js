@@ -3,7 +3,6 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const { CheckerPlugin } = require('awesome-typescript-loader');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const PacktrackerPlugin = require('@packtracker/webpack-plugin')
@@ -41,7 +40,6 @@ module.exports = {
       filename: '[name].css',
       chunkFilename: '[id].css'
     }),
-    new CheckerPlugin(),
     new PacktrackerPlugin({
       project_token: '219c8574-0259-4a20-8826-8ffbcf5398c3',
       upload: process.env.ci === 'true',
