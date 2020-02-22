@@ -3,7 +3,7 @@ import TaroTest from '../src/containers/taro-container';
 
 export default {
     title: 'Taro 兼容',
-    component: <TaroTest />
+    component: TaroTest
 };
 
 export const TaroTestStory = () => {
