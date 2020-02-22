@@ -91,7 +91,8 @@
     "webpack-merge": "4.1.4",
     "webpack-visualizer-plugin": "^0.1.11",
     "@tarojs/taro-h5": "^2.0.2",
-    "@tarojs/taro": "^2.0.2"
+    "@tarojs/taro": "^2.0.2",
+    "@tarojs/components": "^2.0.4"
   },
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
