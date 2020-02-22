@@ -108,11 +108,6 @@ module.exports = {
         }
       ],
       exclude: /node_modules/
-    },
-    {
-      test: /\.tsx?$/,
-      use: { loader: 'awesome-typescript-loader' },
-      exclude: /node_modules/
     }
   ]
 };
