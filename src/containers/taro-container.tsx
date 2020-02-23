@@ -8,6 +8,8 @@ type TaroTestState = {
     list: number[];
 };
 
+console.log('TaroTest...');
+
 export default class TaroTest extends Component<any, TaroTestState> {
     constructor(props) {
         super(props);
@@ -16,17 +18,20 @@ export default class TaroTest extends Component<any, TaroTestState> {
             title: "首页",
             list: [1, 2, 3]
         };
+
+        console.log('contructed.')
     }
 
-    componentWillMount() { }
+    componentWillMount() { console.log('will mount') }
 
-    componentDidMount() { }
+    componentDidMount() { console.log('did mount'); }
 
-    componentWillUpdate(nextProps, nextState) { }
+    componentWillUpdate(nextProps, nextState) { console.log('will update') }
 
-    componentDidUpdate(prevProps, prevState) { }
+    componentDidUpdate(prevProps, prevState) { console.log('did mount') }
 
     shouldComponentUpdate(nextProps, nextState) {
+        console.log('should update');
         return true;
     }
 
@@ -36,6 +41,8 @@ export default class TaroTest extends Component<any, TaroTestState> {
     };
 
     render() {
+        console.log('rendering...');
+
         return (
             <View className="index">
                 <View className="title">{this.state.title}</View>
@@ -51,3 +58,6 @@ export default class TaroTest extends Component<any, TaroTestState> {
         );
     }
 }
+
+
+console.log('Taro Test over.');
