@@ -79,18 +79,6 @@ module.exports = {
         amd: 'antd-mobile',
         root: 'antd-mobile'
       },
-      '@tarojs/taro': {
-        commonjs: '@tarojs/taro',
-        commonjs2: '@tarojs/taro',
-        amd: '@tarojs/taro',
-        root: '@tarojs/taro'
-      },
-      "@tarojs/taro-weapp": {
-        commonjs: '@tarojs/taro-weapp',
-        commonjs2: '@tarojs/taro-weapp',
-        amd: '@tarojs/taro-weapp',
-        root: '@tarojs/taro-weapp'
-      },
       "@tarojs/components": {
         commonjs: '@tarojs/components',
         commonjs2: '@tarojs/components',
@@ -102,12 +90,6 @@ module.exports = {
         commonjs2: '@tarojs/redux',
         amd: '@tarojs/redux',
         root: '@tarojs/redux',
-      },
-      "@tarojs/taro": {
-        commonjs: '@tarojs/taro',
-        commonjs2: '@tarojs/taro',
-        amd: '@tarojs/taro',
-        root: '@tarojs/taro',
       },
       "@tarojs/taro-h5": {
         commonjs: '@tarojs/taro-h5',

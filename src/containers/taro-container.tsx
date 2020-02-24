@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Taro, { Component } from "@tarojs/taro";
+import Taro, { Component } from "@tarojs/taro-h5";
 import { View, Button } from "@tarojs/components";
 
 type TaroTestState = {
