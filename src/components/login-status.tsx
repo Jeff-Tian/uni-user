@@ -17,13 +17,7 @@ export const LoginStatus = connect((state, ownProps) => ({
         startCheckingLoginStatus();
 
         UniUser.getInfo()
-            .then((res: any) => {
-                if (res.statusCode !== 200) {
-                    throw res;
-                }
-
-                setUserInfo(res)
-            })
+            .then(setUserInfo)
             .catch(console.error)
             .finally(endCheckingLoginStatus)
     }, []);

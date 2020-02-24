@@ -1,6 +1,6 @@
-import Taro from "@tarojs/taro-h5";
 import querystring from "querystring";
 import { loggedIn, login, loginCancelled, setUser } from "../redux/actions/login";
+import { getProfile } from "../api/api";
 
 export const popupHtml = `<html>
   <head>
@@ -54,7 +54,7 @@ export default (win, ssoUrl) => {
     }
 
     return dispatch => {
-        Taro.setStorageSync("returnPath", win.location.pathname);
+        window.localStorage.setItem('returnPath', win.location.pathname);
         dispatch(login());
 
         const interval = setInterval(() => {
@@ -104,22 +104,14 @@ export default (win, ssoUrl) => {
                         dispatch(loggedIn(tokenResult.token));
 
                         try {
-                            const userInfo = await Taro.request({
-                                url: "https://sso.jiwai.win/profile",
-                                header: {
-                                    Authorization: "Bearer " + tokenResult.token
-                                },
-                                method: "GET"
-                            });
+                            const userInfo = await getProfile()
 
                             dispatch(setUser(userInfo.data));
 
-                            let returnPath = Taro.getStorageSync("returnPath");
+                            let returnPath = window.localStorage.getItem("returnPath");
                             console.log("即将跳转到：", returnPath);
-                            await Taro.navigateTo({
-                                url: returnPath,
-                                success: () => Taro.removeStorageSync("returnPath")
-                            });
+                            window.location.href = returnPath;
+                            window.localStorage.setItem('returnPath', '');
                         } catch (ex) {
                             console.error(ex);
                         }

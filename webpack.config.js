@@ -77,30 +77,6 @@ module.exports = {
         commonjs2: 'antd-mobile',
         amd: 'antd-mobile',
         root: 'antd-mobile'
-      },
-      "@tarojs/components": {
-        commonjs: '@tarojs/components',
-        commonjs2: '@tarojs/components',
-        amd: '@tarojs/components',
-        root: '@tarojs/components',
-      },
-      "@tarojs/redux": {
-        commonjs: '@tarojs/redux',
-        commonjs2: '@tarojs/redux',
-        amd: '@tarojs/redux',
-        root: '@tarojs/redux',
-      },
-      "@tarojs/taro-h5": {
-        commonjs: '@tarojs/taro-h5',
-        commonjs2: '@tarojs/taro-h5',
-        amd: '@tarojs/taro-h5',
-        root: '@tarojs/taro-h5',
-      },
-      "@tarojs/taro": {
-        commonjs: '@tarojs/taro',
-        commonjs2: '@tarojs/taro',
-        amd: '@tarojs/taro',
-        root: '@tarojs/taro',
       }
     }
   ]

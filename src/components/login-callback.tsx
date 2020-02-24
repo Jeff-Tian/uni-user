@@ -1,9 +1,7 @@
 import React, { ComponentClass } from "react";
-import Taro, { Component } from "@tarojs/taro";
 import querystring from "querystring";
 import { login, setUser } from "../redux/actions/login";
 import { UniUser } from "../user";
-import { connect } from "@tarojs/redux";
 
 const w = window.parent ?? window;
 
@@ -39,19 +37,12 @@ class Callback extends React.Component {
         if (tokenResult.token) {
             UniUser.loginByToken(console.log)(tokenResult).then(
                 async (returnObj: any) => {
-                    const returnPath = Taro.getStorageSync("returnPath");
+                    const returnPath = window.localStorage.getItem("returnPath");
                     if (returnPath) {
-                        await Taro.navigateTo({
-                            url: returnPath,
-                            fail: async () => {
-                                await Taro.navigateTo(returnObj);
-                            },
-                            success: () => {
-                                Taro.removeStorageSync("returnPath");
-                            }
-                        });
+                        window.location.href = returnPath;
+                        window.localStorage.setItem("returnPath", "");
                     } else {
-                        await Taro.navigateTo(returnObj);
+                        window.location.href = returnObj;
                     }
                 }
             );
