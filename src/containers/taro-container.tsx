@@ -1,5 +1,4 @@
 import Taro, { Component } from "@tarojs/taro";
-import { View, Button } from "@tarojs/components";
 
 type TaroTestState = {
     title: string;
@@ -42,17 +41,7 @@ export default class TaroTest extends Component<any, TaroTestState> {
         console.log('rendering...');
 
         return (
-            <View className="index">
-                <View className="title">{this.state.title}</View>
-                <View className="content">
-                    {this.state.list.map(item => {
-                        return <View className="item">{item}</View>;
-                    })}
-                    <Button className="add" onClick={this.add}>
-                        添加
-          </Button>
-                </View>
-            </View>
+            <div>Hello World</div>
         );
     }
 }

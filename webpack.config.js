@@ -14,7 +14,6 @@ module.exports = {
   mode: mode,
   entry: {
     index: './src/index.js',
-    taro: './src/containers/taro-container'
   },
   devtool: 'inline-source-map',
   optimization: {
