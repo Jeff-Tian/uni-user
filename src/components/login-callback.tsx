@@ -1,6 +1,5 @@
-import React, { ComponentClass } from "react";
+import React from "react";
 import querystring from "querystring";
-import { login, setUser } from "../redux/actions/login";
 import { UniUser } from "../user";
 
 const w = window.parent ?? window;
