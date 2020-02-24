@@ -1,5 +1,5 @@
 import React, { ComponentClass } from "react";
-import Taro, { Component } from "@tarojs/taro-h5";
+import Taro, { Component } from "@tarojs/taro";
 import querystring from "querystring";
 import { login, setUser } from "../redux/actions/login";
 import { UniUser } from "../user";

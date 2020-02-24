@@ -96,6 +96,12 @@ module.exports = {
         commonjs2: '@tarojs/taro-h5',
         amd: '@tarojs/taro-h5',
         root: '@tarojs/taro-h5',
+      },
+      "@tarojs/taro": {
+        commonjs: '@tarojs/taro',
+        commonjs2: '@tarojs/taro',
+        amd: '@tarojs/taro',
+        root: '@tarojs/taro',
       }
     }
   ]
