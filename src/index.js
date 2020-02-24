@@ -1,5 +1,5 @@
 import UniUserContainer from './containers/uni-user';
-import LoginCallback from './container/login-callback';
+import LoginCallback from './components/login-callback';
 
 export { UniUserContainer };
 export { LoginButton } from './components/login-button';
