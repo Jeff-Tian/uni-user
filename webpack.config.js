@@ -48,7 +48,7 @@ module.exports = {
     new Visualizer(),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh-cn/)
   ].concat(
-    process.env.ci ? [] : [new BundleAnalyzerPlugin()]
+    process.env.ci ? [] : []//[new BundleAnalyzerPlugin()]
   ),
   resolve: require('./webpack/resolve.js'),
   externals: [

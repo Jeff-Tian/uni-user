@@ -7,7 +7,7 @@
   "scripts": {
     "local": "cross-env NODE_ENV=development webpack --config webpack.config.js",
     "dev": "cross-env webpack-dev-server ---config webpack.dev.config.js",
-    "build": "cross-env CSS_LOADER_EXCLUDE_NODE_MODULES=false webpack",
+    "build": "cross-env CSS_LOADER_EXCLUDE_NODE_MODULES=false webpack&&cp src/containers/taro-container.tsx lib",
     "test": "mocha -r ./babel-register.js test/feature.test.ts --timeout=10000",
     "babel": "babel --presets @babel/preset-typescript test/feature.test.ts",
     "rollup": "rollup src/index.js --file lib/bundle.js --format umd --name uni-user",

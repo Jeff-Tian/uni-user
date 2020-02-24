@@ -15,7 +15,7 @@ jobs:
     - stage: release
       node_js: lts/*
       # Advanced: optionally overwrite your default `script` step to skip the tests
-      script: 'npm run build&&cp src/containers/taro-container.tsx lib'
+      script: 'npm run build'
       deploy:
         provider: script
         skip_cleanup: true

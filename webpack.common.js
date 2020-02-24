@@ -5,7 +5,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 
 const configArgv = JSON.parse(process.env.npm_config_argv);
 
-module.exports = function() {
+module.exports = function () {
   let config = {
     entry: {
       index: './src/index.js'
