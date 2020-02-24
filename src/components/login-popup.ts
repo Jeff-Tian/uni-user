@@ -31,7 +31,7 @@ export const popupHtml = `<html>
 </html>
 `;
 
-export default (win, ssoUrl) => {
+export const LoginViaPopup = (win, ssoUrl) => {
     let popup: any = null;
 
     function popupLogic() {
@@ -129,3 +129,5 @@ export default (win, ssoUrl) => {
         popupLogic();
     };
 }
+
+export default LoginViaPopup;
