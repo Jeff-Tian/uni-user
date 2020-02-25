@@ -8,7 +8,7 @@
     "local": "cross-env NODE_ENV=development webpack --config webpack.config.js",
     "dev": "cross-env webpack-dev-server ---config webpack.dev.config.js",
     "build": "cross-env CSS_LOADER_EXCLUDE_NODE_MODULES=false webpack",
-    "test": "cross-env NODE_ENV=unittest TS_NODE_TRANSPILE_ONLY=1 mocha --require espower-typescript/guess test/*.test.ts --timeout=10000",
+    "test": "cross-env mocha --require espower-typescript/guess test/*.test.ts --timeout=10000",
     "babel": "babel --presets @babel/preset-typescript test/*.test.ts",
     "rollup": "rollup src/index.js --file lib/bundle.js --format umd --name uni-user",
     "prepublishOnly": "cross-env NODE_ENV=production npm run build",
