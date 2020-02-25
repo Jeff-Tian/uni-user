@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
+    "module": "CommonJS",
     "noImplicitAny": false,
     "removeComments": true,
     "lib": [
@@ -17,7 +17,8 @@
     "typeRoots": [
       "node_modules/@types"
     ],
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "allowJs": true
   },
   "files": [
     "src/api/api.ts"

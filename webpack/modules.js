@@ -14,23 +14,6 @@ module.exports = {
     },
     {
       test: /\.([tj]sx?)$/,
-      // use: {
-      //   loader: 'babel-loader',
-      //   options: {
-      //     presets: ['@babel/env', '@babel/react'],
-      //     plugins: [
-      //       '@babel/plugin-transform-runtime',
-      //       [
-      //         '@babel/plugin-proposal-class-properties',
-      //         {
-      //           loose: true
-      //         }
-      //       ],
-      //       ['@babel/plugin-proposal-export-default-from']
-      //     ]
-      //   }
-      // },
-
       loader: 'ts-loader',
       options: {
         transpileOnly: true,

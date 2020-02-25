@@ -1,3 +1,5 @@
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
 import { message } from 'antd';
 import { createIntl } from 'react-intl';
 

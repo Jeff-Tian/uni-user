@@ -14,5 +14,9 @@ export const getProfile = async () => {
         },
     })
 
+    if (res.status !== 200) {
+        throw res;
+    }
+
     return await res.json()
 }
