@@ -106,7 +106,7 @@ export const LoginViaPopup = (win, ssoUrl) => {
                         try {
                             const userInfo = await getProfile()
 
-                            dispatch(setUser(userInfo.data));
+                            dispatch(setUser(userInfo));
 
                             let returnPath = window.localStorage.getItem("returnPath");
                             if (returnPath && returnPath !== window.location.pathname) {
