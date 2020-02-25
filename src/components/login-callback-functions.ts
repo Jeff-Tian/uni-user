@@ -3,30 +3,37 @@ import { UniUser } from "../user";
 
 const w = window.parent ?? window;
 
-export const popupLogin = () => {
-    const query = querystring.parse(w.location.search.substr(1));
+const notifyOpener = () => {
+    if (w.opener) {
+        w.opener.postMessage(w.location.search, w.location.origin);
+    }
+}
 
-    const tokenResult: any = this.props.tokenResult || { token: query.t };
-
-    if (tokenResult.token) {
-        UniUser.loginByToken()(tokenResult).then(
-            async (returnObj: any) => {
-                const returnPath = w.localStorage.getItem("returnPath");
-                if (returnPath) {
-                    w.location.href = returnPath;
-                    w.localStorage.setItem("returnPath", "");
-                } else {
-                    w.location.href = returnObj;
-                }
-            }
-        );
+const redirectBack = (returnUrl: string) => {
+    const returnPath = w.localStorage.getItem("returnPath");
+    if (returnPath && w.location.pathname !== returnPath) {
+        w.location.href = returnPath;
+        w.localStorage.setItem("returnPath", "");
+    }
+    else {
+        w.location.href = returnUrl;
     }
 }
 
 export const handleCallback = () => {
-    if (w.opener) {
-        w.opener.postMessage(w.location.search, w.location.origin);
-    }
+    const query = querystring.parse(w.location.search.substr(1));
 
-    popupLogin();
+    const tokenResult: any = { token: query.t };
+
+    if (tokenResult.token) {
+        UniUser.loginByToken(console.log)(tokenResult).then(
+            async (returnUrl: any) => {
+                console.log('loginByToken 成功：', returnUrl);
+
+                notifyOpener();
+
+                redirectBack(returnUrl);
+            }
+        );
+    }
 }
