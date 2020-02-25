@@ -109,9 +109,11 @@ export const LoginViaPopup = (win, ssoUrl) => {
                             dispatch(setUser(userInfo.data));
 
                             let returnPath = window.localStorage.getItem("returnPath");
-                            console.log("即将跳转到：", returnPath);
-                            window.location.href = returnPath;
-                            window.localStorage.setItem('returnPath', '');
+                            if (returnPath && returnPath !== window.location.pathname) {
+                                console.log("即将跳转到：", returnPath);
+                                window.location.href = returnPath;
+                                window.localStorage.setItem('returnPath', '');
+                            }
                         } catch (ex) {
                             console.error(ex);
                         }

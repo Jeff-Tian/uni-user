@@ -9,7 +9,7 @@ export const popupLogin = () => {
     const tokenResult: any = this.props.tokenResult || { token: query.t };
 
     if (tokenResult.token) {
-        UniUser.loginByToken(console.log)(tokenResult).then(
+        UniUser.loginByToken()(tokenResult).then(
             async (returnObj: any) => {
                 const returnPath = w.localStorage.getItem("returnPath");
                 if (returnPath) {
